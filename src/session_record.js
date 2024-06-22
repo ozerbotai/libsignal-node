@@ -270,7 +270,8 @@ class SessionRecord {
             console.warn("Session already closed", session);
             return;
         }
-        console.info("Closing session:", session);
+        // Disable log since it is too noisy
+        // console.info("Closing session:", session);
         session.indexInfo.closed = Date.now();
     }
 
