@@ -44,7 +44,7 @@ class SessionBuilder {
                 const openSession = record.getOpenSession();
                 if (openSession) {
                     // Disable warning since it is too noisy
-                    // console.warn("Closing stale open session for new outgoing prekey bundle");
+                    // console.warn("libsignal: Closing stale open session for new outgoing prekey bundle");
                     record.closeSession(openSession);
                 }
             }
@@ -73,7 +73,7 @@ class SessionBuilder {
         const existingOpenSession = record.getOpenSession();
         if (existingOpenSession) {
             // Disable warning since it is too noisy
-            // console.warn("Closing open session in favor of incoming prekey bundle");
+            // console.warn("libsignal: Closing open session in favor of incoming prekey bundle");
             record.closeSession(existingOpenSession);
         }
         record.setSession(await this.initSession(false, preKeyPair, signedPreKeyPair,
